@@ -45,7 +45,8 @@
     };
 
      neovim-flake = {
-      url = github:asheeshdwivedi/neovim-flake;
+      url = git+file:///Users/asheesh.dwivedi/playground/neovim-flake;
+      #url = github:asheeshdwivedi/neovim-flake;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -6,7 +6,7 @@ let
     asciinema            # record the terminal
     bottom               # alternative to htop & ytop
     cachix               # nix caching
-    #calibre              # e-book reader
+    #calibre             # e-book reader
     docker-compose       # docker manager
     dive                 # explore docker layers
     duf                  # disk usage/free utility
@@ -14,7 +14,7 @@ let
     fd                   # "find" for files
     glow                 # terminal markdown viewer
     hyperfine            # command-line benchmarking tool
-    #insomnia             # rest client with graphql support
+    #insomnia            # rest client with graphql support
     killall              # kill processes by name
     neofetch             # command-line system information
     nix-index            # locate packages containing certain nixpkgs
@@ -25,12 +25,18 @@ let
     ripgrep              # fast grep
     tldr                 # summary of a man page
     tree                 # display files in a tree view
-    #vlc                  # media player
+    #vlc                 # media player
     xsel                 # clipboard support (also for neovim)
     httpie               # An open-source API testing client for open minds.
     python3              # python dependency
     awscli2              # Command-line utility for working with Amazon EC2, S3, SQS, ELB, IAM and SDB
     docker               #
+    ncdu                 # disk space info (a better du)
+    neofetch             # command-line system information
+    asciinema            # record the terminal
+    hyperfine            # command-line benchmarking tool
+    rnix-lsp             # nix lsp server
+
   ];
 
   gitPkgs = with pkgs.gitAndTools; [

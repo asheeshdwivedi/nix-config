@@ -55,7 +55,8 @@ in
       "*hie.yaml"      # ghcide files
       "*.mill-version" # used by metals
       "*.jvmopts"      # should be local to every project
-      "*.idea" 
+      "*.idea"
+      "*.DS_Store"
     ];
     userEmail = "asheesh.dwivedi@disneystreaming.com";
     userName = "Asheesh Dwivedi";

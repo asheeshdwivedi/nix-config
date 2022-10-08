@@ -1,4 +1,4 @@
-{ inputs, config, pkgs,machine,home-manager, ... }:
+{ inputs, config, pkgs, machine, home-manager, ... }:
 
 with inputs;
 
@@ -61,9 +61,9 @@ in
     useGlobalPkgs = true;
     users."${machine.username}" = {
       imports = [
-         neovim-flake.nixosModules.x86_64-darwin.hm
+        neovim-flake.nixosModules.x86_64-darwin.hm
         ./home/home.nix
-        ];
+      ];
     };
     extraSpecialArgs = {
       inherit machine inputs;

@@ -26,7 +26,14 @@ in
         size = fontSize;
       };
       selection.save_to_clipboard = true;
-      shell.program = "${pkgs.fish}/bin/fish";
+      shell = {
+        program = "${pkgs.fish}/bin/fish";
+         args = [
+             "--login"
+             "--init-command"
+              "tmux-sessions"
+         ];
+      };
       window = {
         decorations = "full";
         opacity = 0.8;

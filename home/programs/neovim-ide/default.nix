@@ -2,8 +2,8 @@
 
 let
   metals = pkgs.metalsBuilder {
-    version = "0.11.8+79-e6494d3f-SNAPSHOT";
-    outputHash = "sha256-DiahdygCQEHpIbujba7XN0u3kvOYXDiun2KOcfkW6u8=";
+    version = "0.11.8+196-d47496ed-SNAPSHOT";
+    outputHash = "sha256-XQGoHxEeeFVv5L++rZSE286o+IlUeJWvJQwbPqA6cx4=";
   };
 in
 {
@@ -42,6 +42,7 @@ in
           clang = false;
           ts = false;
           go = false;
+          json = true;
         };
         visuals = {
           enable = true;
@@ -60,12 +61,12 @@ in
         };
         statusline.lualine = {
           enable = true;
-          theme = "onedark";
+          theme = "catppuccin";
         };
         theme = {
           enable = true;
-          name = "onedark";
-          style = "deep";
+          name = "catppuccin";
+          style = "macchiato";
           transparency = true;
         };
         autopairs.enable = true;
@@ -79,6 +80,8 @@ in
           hideFiles = [ "node_modules" ".cache" ];
         };
         hop.enable = true;
+        nvim-terminal.enable = true;
+        nvim-dap.enable = true;
         todo.enable = true;
         tabline.nvimBufferline.enable = true;
         treesitter = {
