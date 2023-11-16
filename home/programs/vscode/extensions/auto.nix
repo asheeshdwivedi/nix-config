@@ -20,7 +20,6 @@
   "mishkinf.goto-next-previous-member"
   "redhat.vscode-yaml"
   "shyykoserhiy.vscode-spotify"
-  "silvenon.mdx"
   "sourcegraph.sourcegraph"
   "timonwong.shellcheck"
   "usernamehw.errorlens"

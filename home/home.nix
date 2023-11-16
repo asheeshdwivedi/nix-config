@@ -31,12 +31,13 @@ let
     python3              # python dependency
     awscli2              # Command-line utility for working with Amazon EC2, S3, SQS, ELB, IAM and SDB
     docker               #
-    ncdu                 # disk space info (a better du)
+    #ncdu                 # disk space info (a better du)
     neofetch             # command-line system information
     asciinema            # record the terminal
     hyperfine            # command-line benchmarking tool
     rnix-lsp             # nix lsp server
 
+    haskellPackages.nix-tree # visualize nix dependencies
   ];
 
   gitPkgs = with pkgs.gitAndTools; [

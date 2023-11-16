@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   inherit (pkgs) vscode-extensions;
@@ -13,7 +13,7 @@ let
 
   baseSettings = mkVscodeModule {
     enable = true;
-    package = pkgs.runCommandNoCC "dummy" { } "mkdir $out" // { pname = pkgs.vscode.pname; };
+    package = pkgs.runCommand "dummy" { } "mkdir $out" // { pname = pkgs.vscode.pname; version = "0.0.0"; };
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
@@ -29,7 +29,7 @@ let
   scala = configuredExtension
     {
       extension = vscode-extensions.scala-lang.scala;
-      settings = exclude [ "**/.bloop" "**/.ammonite" ".metals" ];
+      settings = exclude [ "**/.bloop" "**/.ammonite" "**/.metals" "**/.scala-build" ];
     };
 
   prettier = configuredExtension
@@ -85,7 +85,7 @@ let
         {
           key = "ctrl+cmd+enter";
           command = "command-runner.run";
-          args = { command = "darwin-rebuild switch --flake ~/.nixpkgs"; };
+          args = { command = "darwin-rebuild switch --flake ~/.nixpkgs --impure"; };
           when = "editorLangId == nix";
         }
       ];
@@ -97,8 +97,9 @@ let
       settings = {
         "nix.enableLanguageServer" = true;
         "files.associations" = { "flake.lock" = "json"; };
-      };
+      } // exclude [ ".direnv/" ];
     };
+
 in
 {
   imports = [

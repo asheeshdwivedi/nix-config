@@ -18,8 +18,8 @@
     };
 
     gitignore-source = {
-       url = "github:hercules-ci/gitignore.nix";
-       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hercules-ci/gitignore.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Fish shell
@@ -34,8 +34,8 @@
     };
 
     fish-omf-plugin-asp = {
-       url = github:m-radzikowski/omf-plugin-asp;
-       flake = false;
+      url = github:m-radzikowski/omf-plugin-asp;
+      flake = false;
     };
 
     # Github Markdown ToC generator
@@ -44,7 +44,7 @@
       flake = false;
     };
 
-     neovim-flake = {
+    neovim-flake = {
       url = git+file:///Users/asheesh.dwivedi/playground/neovim-flake;
       #url = github:asheeshdwivedi/neovim-flake;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -52,8 +52,8 @@
 
   };
   outputs = inputs @ { self, nixpkgs, darwin, ... }:
-  {
-       darwinConfigurations.asheesh-work =
+    {
+      darwinConfigurations.asheesh-work =
         let
           machine = import ./machines/work.nix;
           inherit (machine) system;
@@ -71,7 +71,7 @@
         in
         darwin.lib.darwinSystem {
           inherit system;
-           modules = [
+          modules = [
             {
               nixpkgs.overlays = [
                 arm-overrides

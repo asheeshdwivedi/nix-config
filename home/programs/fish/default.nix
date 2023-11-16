@@ -23,6 +23,7 @@ let
 
   fishConfig = ''
     set fish_greeting
+    set -x PATH /Users/asheesh.dwivedi/.ghcup/bin $PATH
   '' + fzfConfig + themeConfig;
 in
 {
